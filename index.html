@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't use</title>
+    <style>
+        
+        .code{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>
+            
+                <code class="code">
+                    even_vect<-c()
+                    odd_vect<-c()
+                    start<- as.numeric(readline( "Enter starting number: "))
+                    end<- as.numeric(readline( "Enter ending number: "))
+                    vect<-c(start:end)
+                    for( i in vect){
+                    if(i%%2==0){
+                    even_vect<-append(even_vect,i)
+                    }
+                    else{
+                    odd_vect<-append(odd_vect,i)
+                    }
+                    }
+                    cat("Even numbers",even_vect)
+                    cat("\n odd numbers are",odd_vect)
+                </code>
+            
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                a<-c()
+                siz<- as.numeric(readline(prompt = "Enter a number: "))
+                for(i in 1:siz){
+                ele<- as.numeric(readline(prompt = "Enter the positive number: "))
+                a<-append(a,ele)
+                }
+                for(i in a){
+                if(i< 0){
+                stop("negative numbers not allowed")
+                }
+                else{
+                print(sqrt(i))
+                }
+                }
+   
+  
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                fact_recursive <- function(n) {
+                    if (n == 0 || n == 1) {
+                    return(1)
+                    } else {
+                    return(n * fact_recursive(n - 1))
+                    }
+                    }
+                    num<-as.numeric(readline(prompt = "Enter a number: "))
+                    result <- fact_recursive(num)
+                    cat("Factorial of", num, "is:", result, "\n")  
+
+
+
+
+</code>
+<button class="btn">cpoy</button>
+        </li>
+
+
+        <li>
+            <code class="code">
+                group1 <- c(20, 21, 22, 23, 24)
+group2 <- c(25, 26, 27, 28, 29)
+group3 <- c(30, 31, 32, 33, 34
+t_test_result <- t.test(group1, group2)
+cat("T-test Results:\n")
+print(t_test_result)
+anova_result <- aov(c(group1, group2, group3) ~ c(rep("Group1", length(group1)), rep("Group2", length(group2)), rep("Group3", length(group3))))
+cat("\nANOVA Results:\n")
+print(summary(anova_result))
+
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                
+                
+                siz<- as.numeric(readline(prompt = "Enter a size: "))
+                vect<-c()
+                f<-factor()
+                for(i in 1:siz){
+                num<- as.numeric(readline(prompt = "Enter a number: "))
+                vect<-append(vect,num)
+                lbl<-(readline(prompt = "Enter a lable: "))
+                f<-append(f,lbl)
+                }
+                tapply(vect,f,mean)
+                tapply(vect,f,list)
+                sapply(tapply(vect,f,list),mean)
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                generate_data <- function(n, mean_val, sd_val) {
+                    return(rnorm(n, mean = mean_val, sd = sd_val))
+                    }
+                    set.seed(123) # For reproducibility
+                    sample_data <- generate_data(1000, 50, 10)
+                    calculate_stationary_distribution <- function(data) {
+                    stationary_distribution <- c(
+                    sum(data),
+                    mean(data),
+                    median(data),
+                    min(data),
+                    max(data)
+                    )
+                    return(stationary_distribution)
+                    }
+                    stationary_dist <- calculate_stationary_distribution(sample_data)
+                    print("Stationary Distribution:")
+                    print(stationary_dist)
+               
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                quicksort <- function(arr)
+                {
+                if (length(arr) <= 1)
+                {
+                return(arr)
+                }
+                pivot <- arr[1] # Choose the first element as pivot
+                smaller <- arr[arr < pivot]
+                equal <- arr[arr == pivot]
+                larger <- arr[arr > pivot]
+                return(c(quicksort(smaller), equal, quicksort(larger)))
+                }
+                siz<- as.numeric(readline(prompt = "Enter a size: "))
+                arr<-c()
+                for(i in 1:siz){
+                num<- as.numeric(readline(prompt = "Enter a number: "))
+                arr<-append(arr,num)
+                }
+                sorted_arr <- quicksort(arr)
+                cat("Sorted array:", sorted_arr, "\n")
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+              
+                file_path <- "C:/Users/91702/OneDrive/Desktop/test.txt"
+                write.table("Hi", file = file_path, sep = "\t", row.names = FALSE)
+                read_data <- read.table(file = file_path, header = TRUE, sep = "\t")
+                print(read_data)
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+                x <- c(1,2,3,4,5)
+y <- c(4,6,8,2, 10)
+plot(x, y, type="l", main="Line Chart Example", xlab="X-axis Label", ylab="Y-axis Label", col="red")
+data <- rnorm(1000) # Generating random data
+hist(data, main="Histogram Example", xlab="Value", ylab="Frequency", col="lightblue", border="black")
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+plot(x, y, type="l", main="Line Chart Example", xlab="X-axis Label", ylab="Y-axis Label", col="red")
+slices <- c(10, 20, 15, 30, 25)
+labels <- c("A", "B", "C", "D", "E")
+pie(slices, labels, main="Pie Chart Example", col=rainbow(length(slices)))
+data <- c(12, 15, 18, 20, 22, 25, 30, 40, 50)
+boxplot(data, main="Box Plot Example", xlab="Data", col="green", border="black")
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 3, 1, 4, 5)
+plot(x, y, main="Scatterplot Example", xlab="X-axis Label", ylab="Y-axis Label", pch=19, col="blue")
+               
+             
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+
+
+                data(mtcars)
+                str(mtcars)
+                head(mtcars)
+                summary(mtcars)
+                average_mpg <- mean(mtcars$mpg)
+                cat("Average MPG:", average_mpg, "\n")
+                max_hp_car <- mtcars[which.max(mtcars$hp), "model"]
+                cat("Car model with the highest horsepower:", max_hp_car, "\n")
+                mtcars$efficiency <- mtcars$mpg / mtcars$cyl
+                head(mtcars)
+                plot(mtcars$hp, mtcars$efficiency, xlab = "Horsepower", ylab = "Efficiency", main = "Fuel Efficiency vs. Horsepower")   
+             
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+
+                data(mtcars)
+                model <- lm(mpg ~ hp, data = mtcars)
+                summary(model)
+                plot(mtcars$hp, mtcars$mpg, xlab = "Horsepower", ylab = "MPG", main = "Linear Regression Example")
+                abline(model, col = "red")
+
+
+
+               
+             
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+        <li>
+            <code class="code">
+
+                mode<-function (vect){
+                    a<-unique(vect)
+                    a[which.max(tabulate(match(vect,a)))]
+                    }
+                    siz<- as.numeric(readline(prompt = "Enter a size: "))
+                    vect<-c()
+                    for(i in 1:siz){
+                    num<- as.numeric(readline(prompt = "Enter a number: "))
+                    vect<-append(vect,num)
+                    }
+                    vect_mean<-mean(vect)
+                    cat("\n mean of the vector",vect_mean)
+                    #vect_mode<-mode(vect)
+                    vect_median<-median(vect)
+                    cat("\n median of the vector",vect_median)
+                    vect_mode<-mode(vect)
+                    cat("\n mode of the vector",vect_mode)
+               
+             
+              
+            </code>
+            <button class="btn">cpoy</button>
+        </li>
+    </ol>
+    <script src="script.js"></script>
+</body>
+</html>
